@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account - iReshp</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --danger: #dc2626;
+            --text-main: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text-main); 
+            background-color: var(--bg); 
+            margin: 0; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .delete-container { 
+            max-width: 500px; 
+            width: 100%; 
+            background: var(--white); 
+            padding: 40px; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); 
+            margin: 20px;
+        }
+
+        h1 { font-size: 1.75rem; color: #111827; margin-bottom: 1rem; text-align: center; }
+        
+        .warning-box {
+            background-color: #fff5f5;
+            border-left: 4px solid var(--danger);
+            padding: 15px;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .instruction {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 0.9rem; }
+        input { 
+            width: 100%; 
+            padding: 12px; 
+            border: 1px solid #d1d5db; 
+            border-radius: 6px; 
+            font-size: 1rem;
+        }
+
+        .btn-delete {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--danger);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-delete:hover { background-color: #b91c1c; }
+
+        .footer-links {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        
+        .footer-links a { color: var(--primary); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="delete-container">
+    <h1>Delete iReshp Account</h1>
+    
+    <div class="warning-box">
+        <strong>Warning:</strong> Deletion is permanent. Once processed, your profile, reels, public posts, and undelivered encrypted messages will be removed from our production databases within 30 days.
+    </div>
+
+    <p class="instruction">If you no longer have the app installed, please enter your registered phone number below to initiate a manual deletion request.</p>
+
+    <form id="deletionRequest">
+        <div class="form-group">
+            <label for="phone">Registered Phone Number</label>
+            <input type="tel" id="phone" placeholder="+254..." required>
+        </div>
+
+        <div class="form-group">
+            <label for="reason">Reason for leaving (Optional)</label>
+            <input type="text" id="reason" placeholder="Help us improve">
+        </div>
+
+        <button type="submit" class="btn-delete">Request Data Purge</button>
+    </form>
+
+    <div class="footer-links">
+        <p>Changed your mind? <a href="index.html">Back to Privacy Policy</a></p>
+        <p style="margin-top: 10px; color: var(--text-light);">Questions? Contact <a href="mailto:support@ireshp.com">support@ireshp.com</a></p>
+    </div>
+</div>
+
+<script>
+    document.getElementById('deletionRequest').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const phone = document.getElementById('phone').value;
+        
+        // This logic will connect to your DigitalOcean backend later
+        alert("Deletion request received for " + phone + ". A confirmation code will be sent to this number to verify ownership before the 30-day purge begins.");
+    });
+</script>
+
+</body>
+</html>
