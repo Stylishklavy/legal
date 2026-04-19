@@ -5,164 +5,163 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - iReshp</title>
     <style>
-        /* Responsive Base Styles */
         :root {
-            --primary-color: #3498db;
-            --text-color: #333;
-            --bg-color: #f4f7f6;
-            --container-bg: #ffffff;
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --text-main: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --white: #ffffff;
+            --accent: #dbeafe;
         }
 
-        * {
-            box-sizing: border-box;
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text-main); 
+            background-color: var(--bg); 
+            margin: 0; 
+            padding: 0; 
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.7;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
+        .wrapper { padding: 20px; display: flex; justify-content: center; }
+        
+        .policy-container { 
+            max-width: 800px; 
+            width: 100%; 
+            background: var(--white); 
+            padding: 40px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
         }
 
-        .container {
-            width: 100%;
-            max-width: 900px; /* Limits width on large screens */
-            margin: 20px;
-            padding: 40px;
-            background: var(--container-bg);
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        h1 { font-size: 2.25rem; color: #111827; margin-bottom: 0.5rem; }
+        .effective-date { color: var(--text-light); font-size: 0.9rem; margin-bottom: 2rem; display: block; }
+        
+        h2 { 
+            font-size: 1.5rem; 
+            color: var(--secondary); 
+            margin-top: 2.5rem; 
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 8px;
         }
 
-        /* Responsive Header */
-        h1 {
-            font-size: 2rem;
-            color: #1a1a1a;
-            margin-top: 0;
-            border-bottom: 4px solid var(--primary-color);
-            padding-bottom: 10px;
-            word-wrap: break-word;
+        h3 { font-size: 1.1rem; color: #374151; margin-top: 1.5rem; }
+
+        p, li { margin-bottom: 1rem; font-size: 1.05rem; }
+        ul { padding-left: 1.5rem; }
+
+        .highlight-box { 
+            background: var(--accent); 
+            padding: 20px; 
+            border-radius: 8px; 
+            border-left: 4px solid var(--primary);
+            margin: 2rem 0;
         }
 
-        h2 {
-            font-size: 1.5rem;
-            color: #2c3e50;
-            margin-top: 35px;
-            padding-left: 12px;
-            border-left: 5px solid var(--primary-color);
+        .badge {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
         }
 
-        p, li {
-            font-size: 1.05rem;
-            margin-bottom: 15px;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        .last-updated {
-            display: inline-block;
-            background: #eee;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .highlight-box {
-            background-color: #eef7fe;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 25px 0;
-            border: 1px solid #d1e9f9;
-        }
-
-        /* Mobile Optimization */
-        @media (max-width: 600px) {
-            .container {
-                margin: 10px;
-                padding: 25px 20px;
-                border-radius: 8px;
-            }
-
-            h1 {
-                font-size: 1.6rem;
-            }
-
-            h2 {
-                font-size: 1.25rem;
-            }
-
-            p, li {
-                font-size: 1rem;
-            }
-        }
-
-        .footer {
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #888;
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .policy-container { padding: 25px 20px; }
+            h1 { font-size: 1.75rem; }
+            h2 { font-size: 1.25rem; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Privacy Policy</h1>
-    <span class="last-updated">Last Updated: April 19, 2026</span>
+<div class="wrapper">
+    <article class="policy-container">
+        <header>
+            <h1>iReshp Privacy Policy</h1>
+            <span class="effective-date">Effective Date: April 14, 2026</span>
+        </header>
 
-    <p>Welcome to <strong>iReshp</strong>. Your privacy is our priority. This policy outlines our commitment to data protection and how we handle information within our localized social and messaging ecosystem.</p>
+        <section>
+            <h2>1. Header & Scope</h2>
+            <p>Welcome to iReshp. This Privacy Policy is designed to provide full transparency regarding how iReshp collects, uses, and protects your information[cite: 4]. This policy applies strictly to the iReshp mobile application, the ireshp.com website, and all integrated messaging, social feed, and creator services provided by our platform[cite: 5].</p>
+            <p>By using iReshp, you agree to the practices described in this document[cite: 6]. We are committed to a "privacy-first" architecture, ensuring that your social interactions are secure and your personal data remains under your control[cite: 7].</p>
+        </section>
 
-    <div class="highlight-box">
-        <strong>Encryption & Local-First:</strong> iReshp uses end-to-end encryption (E2EE) for chats and a local-first architecture (SQLite). Your private messages are decrypted only on your device and are not accessible by us.
-    </div>
+        <section class="highlight-box">
+            <strong>The Encryption Pillar:</strong> iReshp is built with a zero-knowledge architecture. All one-on-one chats are protected by End-to-End Encryption (E2EE)[cite: 28, 30]. We do not hold decryption keys and cannot access your private messages under any circumstances[cite: 32].
+        </section>
 
-    <h2>1. Information Collection</h2>
-    <p>To provide a seamless experience, we collect:</p>
-    <ul>
-        <li><strong>Account Details:</strong> Information provided during signup (username, contact info).</li>
-        <li><strong>Device Metadata:</strong> Basic hardware and OS info to ensure app stability.</li>
-        <li><strong>Interaction Data:</strong> Non-private metadata required to route messages and update chronological feeds.</li>
-    </ul>
+        <section>
+            <h2>2. Information Collection (The Data Hierarchy)</h2>
+            <h3>A. Information You Provide Directly</h3>
+            <ul>
+                <li><strong>Account Credentials:</strong> Phone number and display name used for authentication and spam prevention[cite: 13, 14].</li>
+                <li><strong>User Profile:</strong> Optional profile picture and bio, which are public within the ecosystem[cite: 15, 16].</li>
+                <li><strong>Public Content:</strong> Content posted to Feeds or Reels is public and intended for distribution[cite: 17, 35].</li>
+            </ul>
 
-    <h2>2. Use of Data</h2>
-    <p>We utilize your data to:</p>
-    <ul>
-        <li>Maintain secure, low-latency communication via WebSockets.</li>
-        <li>Verify account authenticity and prevent spam.</li>
-        <li>Optimize the "local-first" synchronization between your device and our servers.</li>
-    </ul>
+            <h3>B. Device Permissions</h3>
+            <p>To function correctly, we request access to[cite: 19]:</p>
+            <ul>
+                <li><strong>Camera & Microphone:</strong> For capturing Reels and sending media[cite: 20].</li>
+                <li><strong>Media Gallery:</strong> To select photos/videos for your profile and posts[cite: 21].</li>
+                <li><strong>Contacts (Optional):</strong> To help you connect with people you know[cite: 22].</li>
+            </ul>
 
-    <h2>3. Your Data Rights</h2>
-    <p>You have full control over your information:</p>
-    <ul>
-        <li><strong>Access & Export:</strong> You can view your data within the app settings.</li>
-        <li><strong>Deletion:</strong> You may delete your account at any time. Server-side identifiable data is purged within 30 days of deletion.</li>
-        <li><strong>Local Control:</strong> Since chat history is stored locally, you can clear your local database directly from the app.</li>
-    </ul>
+            <h3>C. Automatically Collected Information</h3>
+            <ul>
+                <li><strong>Technical Logs:</strong> Device model, OS version, and performance reports for troubleshooting[cite: 24, 25].</li>
+                <li><strong>IP Address:</strong> Briefly collected during login for security and access prevention[cite: 26].</li>
+            </ul>
+        </section>
 
-    <h2>4. Security Standards</h2>
-    <p>We use industry-standard protocols (SSL/TLS) for data in transit. While no system is perfect, our use of E2EE ensures that the most sensitive part of your data—your conversations—remains private even in the event of a server breach.</p>
+        <section>
+            <h2>3. Data Storage & Retention</h2>
+            <p><strong>Storage Infrastructure:</strong> All user data is stored on secure cloud servers provided by DigitalOcean[cite: 39].</p>
+            <ul>
+                <li><strong>Public Content:</strong> Retained while your account is active[cite: 40].</li>
+                <li><strong>Account Data:</strong> Kept as long as the account exists[cite: 41].</li>
+                <li><strong>Encrypted Messages:</strong> Stored only until successfully delivered; they are then purged from our infrastructure[cite: 42, 43].</li>
+            </ul>
+        </section>
 
-    <h2>5. Third-Party Policy</h2>
-    <p>We do not sell your data. We only use trusted infrastructure providers (like DigitalOcean) to host our backend services. These providers do not have access to your personal content.</p>
+        <section>
+            <h2>4. Third-Party Service Providers</h2>
+            <p>We use limited trusted providers to maintain app stability[cite: 45]:</p>
+            <ul>
+                <li><strong>Infrastructure:</strong> DigitalOcean handles backend hosting[cite: 47].</li>
+                <li><strong>Framework:</strong> Built using Expo and React Native; we may use Expo's internal tools for crash reporting[cite: 48, 49].</li>
+            </ul>
+            <p><strong>Strict Privacy:</strong> We do not sell, rent, or share your personal information with advertisers or Meta-owned tracking SDKs[cite: 50, 51].</p>
+        </section>
 
-    <h2>6. Contact Support</h2>
-    <p>For any privacy-related inquiries, please reach out through the official iReshp support channels or the contact section on our web portal.</p>
+        <section style="background: #fff5f5; border: 1px solid #feb2b2; padding: 20px; border-radius: 8px;">
+            <h2 style="color: #c53030; border: none; margin-top: 0;">5. User Rights & Account Deletion</h2>
+            <p>In compliance with Google Play requirements, we provide full control over your digital identity[cite: 53]:</p>
+            <ul>
+                <li><strong>In-App Deletion:</strong> Permanently delete your account via <em>Settings > Account > Delete Account</em>[cite: 55].</li>
+                <li><strong>Web-Based Deletion:</strong> If the app is uninstalled, requests can be submitted at <em>ireshp.com/delete-account</em>[cite: 56].</li>
+                <li><strong>Data Purge:</strong> Upon deletion, all public posts, reels, profile info, and undelivered messages are permanently removed from production databases[cite: 57].</li>
+            </ul>
+        </section>
 
-    <div class="footer">
-        &copy; 2026 iReshp. Built for privacy and community.
-    </div>
+        <section>
+            <h2>6. Contact & Updates</h2>
+            <p>We may update this policy to reflect service or legal changes and will notify you within the app[cite: 59, 60].</p>
+            <p><strong>Contact our privacy team:</strong> <a href="mailto:support@ireshp.com">support@ireshp.com</a> [cite: 61]</p>
+        </section>
+
+        <footer style="text-align: center; margin-top: 40px; color: var(--text-light); font-size: 0.85rem;">
+            &copy; 2026 iReshp. All rights reserved.
+        </footer>
+    </article>
 </div>
 
 </body>
-</html>
+</html>-
