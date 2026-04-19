@@ -11,6 +11,7 @@
             --text-main: #1f2937;
             --text-light: #6b7280;
             --bg: #f8fafc;
+            --success: #059669;
             --white: #ffffff;
         }
 
@@ -85,6 +86,15 @@
         }
         
         .footer-links a { color: var(--primary); text-decoration: none; }
+
+        .hidden { display: none; }
+        .success-box {
+            background-color: #ecfdf5;
+            border-left: 4px solid var(--success);
+            padding: 15px;
+            margin-bottom: 25px;
+            color: #065f46;
+        }
     </style>
 </head>
 <body>
@@ -96,37 +106,70 @@
         <strong>Warning:</strong> Deletion is permanent. Once processed, your profile, reels, public posts, and undelivered encrypted messages will be removed from our production databases within 30 days.
     </div>
 
-    <p class="instruction">If you no longer have the app installed, please enter your registered phone number below to initiate a manual deletion request.</p>
+    <div id="step1">
+        <p class="instruction">Enter your registered phone number to receive a verification code via SMS.</p>
+        <form id="requestForm">
+            <div class="form-group">
+                <label for="phone">Registered Phone Number</label>
+                <input type="tel" id="phone" placeholder="+254..." required>
+            </div>
+            <div class="form-group">
+                <label for="reason">Reason for leaving (Optional)</label>
+                <input type="text" id="reason" placeholder="Help us improve">
+            </div>
+            <button type="submit" class="btn-delete">Send Verification Code</button>
+        </form>
+    </div>
 
-    <form id="deletionRequest">
-        <div class="form-group">
-            <label for="phone">Registered Phone Number</label>
-            <input type="tel" id="phone" placeholder="+254..." required>
+    <div id="step2" class="hidden">
+        <p class="instruction">A 6-digit code was sent to <span id="displayPhone" style="font-weight:bold;"></span>. Enter it below to confirm deletion.</p>
+        <form id="verifyForm">
+            <div class="form-group">
+                <label for="otp">Verification Code</label>
+                <input type="text" id="otp" maxlength="6" pattern="\d{6}" placeholder="123456" required>
+            </div>
+            <button type="submit" class="btn-delete">Confirm Permanent Deletion</button>
+        </form>
+    </div>
+
+    <div id="step3" class="hidden">
+        <div class="success-box">
+            <strong>Request Confirmed.</strong> Your account has been scheduled for deletion. You have been logged out of all devices. Data will be purged in 30 days.
         </div>
-
-        <div class="form-group">
-            <label for="reason">Reason for leaving (Optional)</label>
-            <input type="text" id="reason" placeholder="Help us improve">
-        </div>
-
-        <button type="submit" class="btn-delete">Request Data Purge</button>
-    </form>
+        <p class="instruction">You can cancel this request at any time by logging back into the iReshp app before the 30-day period expires.</p>
+    </div>
 
     <div class="footer-links">
         <p>Changed your mind? <a href="privacypolicy.html">Back to Privacy Policy</a></p>
-        <p style="margin-top: 10px; color: var(--text-light);">Questions? Contact <a href="mailto:support@ireshp.com">support@ireshp.com</a></p>
     </div>
 </div>
 
 <script>
-    document.getElementById('deletionRequest').addEventListener('submit', function(e) {
+    const requestForm = document.getElementById('requestForm');
+    const verifyForm = document.getElementById('verifyForm');
+    
+    requestForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const phone = document.getElementById('phone').value;
-        
-        // This logic will connect to your DigitalOcean backend later
-        alert("Deletion request received for " + phone + ". A confirmation code will be sent to this number to verify ownership before the 30-day purge begins.");
+        document.getElementById('displayPhone').innerText = phone;
+
+        // Logic: Call your backend (e.g., DigitalOcean / Firebase Function)
+        // await fetch('/api/request-deletion-otp', { method: 'POST', body: JSON.stringify({ phone }) });
+
+        document.getElementById('step1').classList.add('hidden');
+        document.getElementById('step2').classList.remove('hidden');
+    });
+
+    verifyForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const otp = document.getElementById('otp').value;
+
+        // Logic: Verify OTP and trigger account 'tombstoning'
+        // await fetch('/api/confirm-deletion', { method: 'POST', body: JSON.stringify({ otp }) });
+
+        document.getElementById('step2').classList.add('hidden');
+        document.getElementById('step3').classList.remove('hidden');
     });
 </script>
-
 </body>
 </html>
