@@ -10,12 +10,14 @@
             --secondary: #1e40af;
             --text-main: #1f2937;
             --text-light: #6b7280;
-            --bg: #f8fafc;
+            --bg: #ffffff;
             --white: #ffffff;
             --accent: #dbeafe;
+            --border: #e5e7eb;
+            --danger: #dc2626;
         }
 
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; scroll-behavior: smooth; }
         body { 
             font-family: 'Inter', -apple-system, sans-serif; 
             line-height: 1.6; 
@@ -32,8 +34,8 @@
             width: 100%; 
             background: var(--white); 
             padding: 40px; 
-            border-radius: 12px; 
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
+            border-radius: 8px; 
+            border: 1px solid var(--border);
         }
 
         h1 { font-size: 2.25rem; color: #111827; margin-bottom: 0.5rem; }
@@ -42,13 +44,15 @@
         h2 { 
             font-size: 1.5rem; 
             color: var(--secondary); 
-            margin-top: 2.5rem; 
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 8px;
+            margin-top: 3rem; 
+            border-left: 4px solid var(--primary);
+            padding-left: 15px;
+            background: #f9fafb;
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
 
-        h3 { font-size: 1.1rem; color: #374151; margin-top: 1.5rem; }
-
+        h3 { font-size: 1.2rem; color: #111827; margin-top: 2rem; }
         p, li { margin-bottom: 1rem; font-size: 1.05rem; }
         ul { padding-left: 1.5rem; }
 
@@ -58,16 +62,6 @@
             border-radius: 8px; 
             border-left: 4px solid var(--primary);
             margin: 2rem 0;
-        }
-
-        .badge {
-            background: #f1f5f9;
-            color: #475569;
-            padding: 4px 12px;
-            border-radius: 9999px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
         }
 
         /* Responsive adjustments */
@@ -84,84 +78,115 @@
     <article class="policy-container">
         <header>
             <h1>iReshp Privacy Policy</h1>
-            <span class="effective-date">Effective Date: April 14, 2026</span>
+            <span class="effective-date">Last Updated: April 19, 2026</span>
         </header>
 
         <section>
-            <h2>1. Header & Scope</h2>
-            <p>Welcome to iReshp. This Privacy Policy is designed to provide full transparency regarding how iReshp collects, uses, and protects your information[cite: 4]. This policy applies strictly to the iReshp mobile application, the ireshp.com website, and all integrated messaging, social feed, and creator services provided by our platform[cite: 5].</p>
-            <p>By using iReshp, you agree to the practices described in this document[cite: 6]. We are committed to a "privacy-first" architecture, ensuring that your social interactions are secure and your personal data remains under your control[cite: 7].</p>
+            <p>Welcome to iReshp. We are committed to protecting your personal data and your right to privacy. This Privacy Policy applies to all information collected through our mobile application (iReshp), website (ireshp.com), and related services.</p>
+            <p>By using iReshp, you consent to the collection and use of information in accordance with this policy. If you do not agree with these terms, please discontinue use of the service immediately.</p>
         </section>
 
         <section class="highlight-box">
-            <strong>The Encryption Pillar:</strong> iReshp is built with a zero-knowledge architecture. All one-on-one chats are protected by End-to-End Encryption (E2EE)[cite: 28, 30]. We do not hold decryption keys and cannot access your private messages under any circumstances[cite: 32].
+            <strong>Zero-Knowledge Encryption (Reshlock):</strong> Your private communications are protected by End-to-End Encryption. iReshp does not possess the decryption keys required to read your messages. We cannot provide message content to third parties or law enforcement because we do not have access to it.
         </section>
 
         <section>
-            <h2>2. Information Collection (The Data Hierarchy)</h2>
-            <h3>A. Information You Provide Directly</h3>
+            <h2>1. Information We Collect</h2>
+            <h3>A. Information Provided by You</h3>
             <ul>
-                <li><strong>Account Credentials:</strong> Phone number and display name used for authentication and spam prevention[cite: 13, 14].</li>
-                <li><strong>User Profile:</strong> Optional profile picture and bio, which are public within the ecosystem[cite: 15, 16].</li>
-                <li><strong>Public Content:</strong> Content posted to Feeds or Reels is public and intended for distribution[cite: 17, 35].</li>
+                <li><strong>Account Information:</strong> We collect your email address, username, and password (hashed) when you register.</li>
+                <li><strong>Profile Metadata:</strong> You may choose to provide a profile picture, bio, and display name.</li>
+                <li><strong>User-Generated Content:</strong> We store posts, reels, and comments you share publicly on the platform.</li>
             </ul>
 
-            <h3>B. Device Permissions</h3>
-            <p>To function correctly, we request access to[cite: 19]:</p>
+            <h3>B. Automatically Collected Data</h3>
             <ul>
-                <li><strong>Camera & Microphone:</strong> For capturing Reels and sending media[cite: 20].</li>
-                <li><strong>Media Gallery:</strong> To select photos/videos for your profile and posts[cite: 21].</li>
-                <li><strong>Contacts (Optional):</strong> To help you connect with people you know[cite: 22].</li>
-            </ul>
-
-            <h3>C. Automatically Collected Information</h3>
-            <ul>
-                <li><strong>Technical Logs:</strong> Device model, OS version, and performance reports for troubleshooting[cite: 24, 25].</li>
-                <li><strong>IP Address:</strong> Briefly collected during login for security and access prevention[cite: 26].</li>
+                <li><strong>Device Metadata:</strong> We collect device IDs, OS versions, and hardware models to prevent fraud (e.g., Honeypot security) and ensure app stability.</li>
+                <li><strong>Usage Logs:</strong> We track interactions with the app to improve user experience, such as feature engagement and crash reports.</li>
+                <li><strong>IP Addresses:</strong> Collected for security logging and to prevent unauthorized access.</li>
             </ul>
         </section>
 
         <section>
-            <h2>3. Data Storage & Retention</h2>
-            <p><strong>Storage Infrastructure:</strong> All user data is stored on secure cloud servers provided by DigitalOcean[cite: 39].</p>
+            <h2>2. How We Use Your Information</h2>
+            <p>We use the collected data for the following purposes:</p>
             <ul>
-                <li><strong>Public Content:</strong> Retained while your account is active[cite: 40].</li>
-                <li><strong>Account Data:</strong> Kept as long as the account exists[cite: 41].</li>
-                <li><strong>Encrypted Messages:</strong> Stored only until successfully delivered; they are then purged from our infrastructure[cite: 42, 43].</li>
+                <li><strong>Authentication:</strong> To allow you to sign in and secure your account.</li>
+                <li><strong>Content Delivery:</strong> To host and display your Reels and Feed posts to other users.</li>
+                <li><strong>Security & Safety:</strong> To detect and block malicious actors, bots, and users violating our Terms of Service via automated security logic.</li>
+                <li><strong>Communication:</strong> To send account-related notifications or respond to support inquiries.</li>
             </ul>
         </section>
 
         <section>
-            <h2>4. Third-Party Service Providers</h2>
-            <p>We use limited trusted providers to maintain app stability[cite: 45]:</p>
+            <h2>3. Third-Party Services</h2>
+            <p>To provide a high-quality service, we share limited data with the following sub-processors:</p>
             <ul>
-                <li><strong>Infrastructure:</strong> DigitalOcean handles backend hosting[cite: 47].</li>
-                <li><strong>Framework:</strong> Built using Expo and React Native; we may use Expo's internal tools for crash reporting[cite: 48, 49].</li>
+                <li><strong>Google Firebase:</strong> Used for secure authentication, real-time database management, and cloud functions.</li>
+                <li><strong>Cloudinary:</strong> Used for the secure hosting and optimization of user-uploaded images and videos (Reels).</li>
+                <li><strong>Cloud Infrastructure:</strong> We use secure cloud providers (e.g., DigitalOcean or AWS) for general backend hosting.</li>
             </ul>
-            <p><strong>Strict Privacy:</strong> We do not sell, rent, or share your personal information with advertisers or Meta-owned tracking SDKs[cite: 50, 51].</p>
+            <p>We do <strong>not</strong> sell your personal data to third parties for marketing purposes.</p>
         </section>
 
-        <section style="background: #fff5f5; border: 1px solid #feb2b2; padding: 20px; border-radius: 8px;">
-            <h2 style="color: #c53030; border: none; margin-top: 0;">5. User Rights & Account Deletion</h2>
-            <p>In compliance with Google Play requirements, we provide full control over your digital identity[cite: 53]:</p>
+        <section>
+            <h2>4. Permissions</h2>
+            <p>The app requires the following permissions to function:</p>
             <ul>
-                <li><strong>In-App Deletion:</strong> Permanently delete your account via <em>Settings > Account > Delete Account</em>[cite: 55].</li>
-                <li><strong>Web-Based Deletion:</strong> If the app is uninstalled, requests can be submitted at <em>ireshp.com/delete-account</em>[cite: 56].</li>
-                <li><strong>Data Purge:</strong> Upon deletion, all public posts, reels, profile info, and undelivered messages are permanently removed from production databases[cite: 57].</li>
+                <li><strong>Camera/Microphone:</strong> To record Reels and capture profile photos.</li>
+                <li><strong>Photo Library:</strong> To upload existing media for posts.</li>
+                <li><strong>Notifications:</strong> To alert you of new messages or interactions.</li>
             </ul>
         </section>
 
         <section>
-            <h2>6. Contact & Updates</h2>
-            <p>We may update this policy to reflect service or legal changes and will notify you within the app[cite: 59, 60].</p>
-            <p><strong>Contact our privacy team:</strong> <a href="mailto:support@ireshp.com">support@ireshp.com</a> [cite: 61]</p>
+            <h2>5. Data Retention</h2>
+            <ul>
+                <li><strong>Public Content:</strong> Stored as long as your account is active or until you delete the content.</li>
+                <li><strong>Encrypted Messages:</strong> Once delivered to the recipient's device, message content is removed from our servers.</li>
+                <li><strong>Deleted Accounts:</strong> Upon account deletion, all personal identifiers are purged from our production databases within 30 days.</li>
+            </ul>
         </section>
 
-        <footer style="text-align: center; margin-top: 40px; color: var(--text-light); font-size: 0.85rem;">
+        <section id="deletion" style="background: #fff5f5; border: 1px solid #feb2b2; padding: 25px; border-radius: 8px;">
+            <h2 style="color: var(--danger); border: none; margin-top: 0; background: transparent;">6. Account Deletion & Data Control</h2>
+            <p>In compliance with Google Play's Data Safety requirements, we provide clear methods to delete your account and associated data:</p>
+            
+            <h3>In-App Deletion</h3>
+            <p>Go to <strong>Settings > Account > Delete Account</strong>. This will immediately trigger the removal of your profile and content.</p>
+            
+            <h3>Web-Based Deletion Request</h3>
+            <p>If you no longer have access to the app, you can request account deletion by visiting:</p>
+            <p><a href="https://ireshp.com/delete-account" style="color: var(--primary); font-weight: bold;">ireshp.com/delete-account</a></p>
+            
+            <h3>Data Purged</h3>
+            <ul>
+                <li>Personal info (Email, Username).</li>
+                <li>All public posts and Reels.</li>
+                <li>Follower/Following relationships.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>7. Children's Privacy</h2>
+            <p>iReshp is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If we discover that a child under 13 has provided us with personal information, we will delete it immediately.</p>
+        </section>
+
+        <section>
+            <h2>8. Legal Protections</h2>
+            <p>We reserve the right to disclose your information as required by law and when we believe that disclosure is necessary to protect our rights and/or comply with a judicial proceeding, court order, or legal process served on our platform. However, as noted, End-to-End encrypted message content cannot be disclosed as we do not have access to it.</p>
+        </section>
+
+        <section>
+            <h2>9. Contact Us</h2>
+            <p>If you have questions about this policy or your data, please contact us at:</p>
+            <p><strong>Email:</strong> <a href="mailto:legal@ireshp.com">legal@ireshp.com</a></p>
+        </section>
+
+        <footer style="text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--text-light); font-size: 0.85rem;">
             &copy; 2026 iReshp. All rights reserved.
         </footer>
     </article>
 </div>
-
 </body>
 </html>-
