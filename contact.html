@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Support - iReshp</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --text-main: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --white: #ffffff;
+            --accent: #dbeafe;
+        }
+
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text-main); 
+            background-color: var(--bg); 
+            margin: 0; 
+            padding: 0; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .contact-container { 
+            max-width: 600px; 
+            width: 100%; 
+            background: var(--white); 
+            padding: 40px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
+            margin: 20px;
+        }
+
+        h1 { font-size: 2rem; color: #111827; margin-bottom: 1rem; text-align: center; }
+        p { text-align: center; color: var(--text-light); margin-bottom: 2rem; }
+
+        .contact-methods {
+            display: grid;
+            gap: 20px;
+        }
+
+        .method-card {
+            padding: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .method-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .method-card h3 { margin: 0 0 10px 0; color: var(--secondary); }
+        
+        .email-link {
+            display: inline-block;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 480px) {
+            .contact-container { padding: 25px 20px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="contact-container">
+    <h1>Contact iReshp Support</h1>
+    <p>Have questions about your privacy, account, or our services? Our team is here to help.</p>
+
+    <div class="contact-methods">
+        <div class="method-card">
+            <h3>Email Support</h3>
+            <p>For general inquiries and privacy concerns:</p>
+            <a href="mailto:support@ireshp.com" class="email-link">support@ireshp.com</a>
+        </div>
+
+        <div class="method-card">
+            <h3>Account Assistance</h3>
+            <p>If you need help with data deletion or profile updates:</p>
+            <a href="https://stylishklavy.github.io/legal/delete-account.html" style="color: var(--text-main);">Visit Deletion Portal</a>
+        </div>
+    </div>
+
+    <a href="https://www.google.com/search?q=ireshp.com" class="btn">Back to ireshp.com</a>
+
+    <footer style="text-align: center; margin-top: 30px; color: var(--text-light); font-size: 0.8rem;">
+        &copy; 2026 iReshp. Dedicated to your digital security.
+    </footer>
+</div>
+
+</body>
+</html>
