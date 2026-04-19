@@ -145,6 +145,9 @@
 </div>
 
 <script>
+    // MASTER CONFIG: Change this to your HTTPS tunnel URL (e.g., ngrok) when testing from GitHub Pages
+    const API_BASE_URL = 'http://10.125.133.185:8080';
+
     const requestForm = document.getElementById('requestForm');
     const verifyForm = document.getElementById('verifyForm');
     
@@ -154,7 +157,7 @@
         document.getElementById('displayEmail').innerText = email;
 
         try {
-            const response = await fetch('http://10.125.133.185:8080/v1/auth/request-deletion', {
+            const response = await fetch(`${API_BASE_URL}/v1/auth/request-deletion`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email })
@@ -173,7 +176,7 @@
         const email = document.getElementById('email').value;
 
         try {
-            const response = await fetch('http://10.125.133.185:8080/v1/auth/confirm-deletion', {
+            const response = await fetch(`${API_BASE_URL}/v1/auth/confirm-deletion`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, otp })
@@ -192,4 +195,5 @@
 </script>
 </body>
 </html>
+
 
