@@ -107,11 +107,11 @@
     </div>
 
     <div id="step1">
-        <p class="instruction">Enter your registered phone number to receive a verification code via SMS.</p>
+        <p class="instruction">Enter your registered email address to receive a verification code.</p>
         <form id="requestForm">
             <div class="form-group">
-                <label for="phone">Registered Phone Number</label>
-                <input type="tel" id="phone" placeholder="+254..." required>
+                <label for="email">Registered Email Address</label>
+                <input type="email" id="email" placeholder="you@example.com" required>
             </div>
             <div class="form-group">
                 <label for="reason">Reason for leaving (Optional)</label>
@@ -122,7 +122,7 @@
     </div>
 
     <div id="step2" class="hidden">
-        <p class="instruction">A 6-digit code was sent to <span id="displayPhone" style="font-weight:bold;"></span>. Enter it below to confirm deletion.</p>
+        <p class="instruction">A 6-digit code was sent to <span id="displayEmail" style="font-weight:bold;"></span>. Enter it below to confirm deletion.</p>
         <form id="verifyForm">
             <div class="form-group">
                 <label for="otp">Verification Code</label>
@@ -150,26 +150,46 @@
     
     requestForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const phone = document.getElementById('phone').value;
-        document.getElementById('displayPhone').innerText = phone;
+        const email = document.getElementById('email').value;
+        document.getElementById('displayEmail').innerText = email;
 
-        // Logic: Call your backend (e.g., DigitalOcean / Firebase Function)
-        // await fetch('/api/request-deletion-otp', { method: 'POST', body: JSON.stringify({ phone }) });
-
-        document.getElementById('step1').classList.add('hidden');
-        document.getElementById('step2').classList.remove('hidden');
+        try {
+            const response = await fetch('http://10.125.133.185:8080/v1/auth/request-deletion', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            });
+            
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.remove('hidden');
+        } catch (err) {
+            alert("Failed to send code. Please try again.");
+        }
     });
 
     verifyForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const otp = document.getElementById('otp').value;
+        const email = document.getElementById('email').value;
 
-        // Logic: Verify OTP and trigger account 'tombstoning'
-        // await fetch('/api/confirm-deletion', { method: 'POST', body: JSON.stringify({ otp }) });
-
-        document.getElementById('step2').classList.add('hidden');
-        document.getElementById('step3').classList.remove('hidden');
+        try {
+            const response = await fetch('http://10.125.133.185:8080/v1/auth/confirm-deletion', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, otp })
+            });
+            
+            if (response.ok) {
+                document.getElementById('step2').classList.add('hidden');
+                document.getElementById('step3').classList.remove('hidden');
+            } else {
+                alert("Invalid or expired code.");
+            }
+        } catch (err) {
+            alert("Verification failed.");
+        }
     });
 </script>
 </body>
 </html>
+
