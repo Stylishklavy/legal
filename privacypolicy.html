@@ -5,74 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - iReshp</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 850px; margin: 0 auto; padding: 40px 20px; background-color: #f9f9f9; }
-        .container { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        h1 { color: #1a1a1a; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
-        h2 { color: #2c3e50; margin-top: 30px; border-left: 4px solid #3498db; padding-left: 15px; }
-        p, li { margin-bottom: 15px; text-align: justify; }
-        .highlight { background-color: #e8f4fd; padding: 15px; border-radius: 5px; font-weight: 500; }
-        .footer { margin-top: 50px; font-size: 0.9em; color: #7f8c8d; text-align: center; }
+        /* Responsive Base Styles */
+        :root {
+            --primary-color: #3498db;
+            --text-color: #333;
+            --bg-color: #f4f7f6;
+            --container-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px; /* Limits width on large screens */
+            margin: 20px;
+            padding: 40px;
+            background: var(--container-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        /* Responsive Header */
+        h1 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-top: 0;
+            border-bottom: 4px solid var(--primary-color);
+            padding-bottom: 10px;
+            word-wrap: break-word;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-top: 35px;
+            padding-left: 12px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        p, li {
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .last-updated {
+            display: inline-block;
+            background: #eee;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box {
+            background-color: #eef7fe;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            border: 1px solid #d1e9f9;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                padding: 25px 20px;
+                border-radius: 8px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            p, li {
+                font-size: 1rem;
+            }
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Privacy Policy for iReshp</h1>
-    <p><strong>Effective Date:</strong> April 19, 2026</p>
+    <h1>Privacy Policy</h1>
+    <span class="last-updated">Last Updated: April 19, 2026</span>
 
-    <p>At <strong>iReshp</strong>, we believe privacy is a fundamental right. This Privacy Policy outlines how we collect, use, and safeguard your data across our mobile application and web services.</p>
+    <p>Welcome to <strong>iReshp</strong>. Your privacy is our priority. This policy outlines our commitment to data protection and how we handle information within our localized social and messaging ecosystem.</p>
 
-    <div class="highlight">
-        <strong>Note on Encryption:</strong> iReshp utilizes end-to-end encryption for private messaging. This means the content of your messages is only readable by you and the recipient. We do not have the technical means to access your private conversations.
+    <div class="highlight-box">
+        <strong>Encryption & Local-First:</strong> iReshp uses end-to-end encryption (E2EE) for chats and a local-first architecture (SQLite). Your private messages are decrypted only on your device and are not accessible by us.
     </div>
 
-    <h2>1. Information We Collect</h2>
-    <p>We collect information to provide a better experience to all our users. This includes:</p>
+    <h2>1. Information Collection</h2>
+    <p>To provide a seamless experience, we collect:</p>
     <ul>
-        <li><strong>Account Information:</strong> Your username, phone number or email address, and profile metadata provided during registration.</li>
-        <li><strong>Content Storage:</strong> While iReshp uses a <em>local-first</em> architecture (storing data on your device via SQLite), certain metadata may be processed by our servers to facilitate message routing and synchronization.</li>
-        <li><strong>Device Information:</strong> We may collect info about your device model, operating system version, and unique device identifiers to optimize app performance.</li>
-        <li><strong>Log Data:</strong> Our servers automatically record information ("log data") created by your use of the services to ensure security and prevent platform abuse.</li>
+        <li><strong>Account Details:</strong> Information provided during signup (username, contact info).</li>
+        <li><strong>Device Metadata:</strong> Basic hardware and OS info to ensure app stability.</li>
+        <li><strong>Interaction Data:</strong> Non-private metadata required to route messages and update chronological feeds.</li>
     </ul>
 
-    <h2>2. Use of Information</h2>
-    <p>Your data is used strictly for the following purposes:</p>
+    <h2>2. Use of Data</h2>
+    <p>We utilize your data to:</p>
     <ul>
-        <li>To facilitate real-time communication via WebSockets.</li>
-        <li>To manage your account and provide customer support.</li>
-        <li>To provide a chronological feed of content relevant to your local area or social circle.</li>
-        <li>To detect, prevent, and address technical issues or fraudulent activity.</li>
+        <li>Maintain secure, low-latency communication via WebSockets.</li>
+        <li>Verify account authenticity and prevent spam.</li>
+        <li>Optimize the "local-first" synchronization between your device and our servers.</li>
     </ul>
 
-    <h2>3. Data Retention and Deletion</h2>
-    <p>Because iReshp prioritizes local storage, much of your data remains on your physical device. For data stored on our servers:</p>
+    <h2>3. Your Data Rights</h2>
+    <p>You have full control over your information:</p>
     <ul>
-        <li>We retain information only as long as necessary to provide the service.</li>
-        <li>Users can delete their account at any time. Upon account deletion, we remove your identifiable data from our active databases within 30 days.</li>
+        <li><strong>Access & Export:</strong> You can view your data within the app settings.</li>
+        <li><strong>Deletion:</strong> You may delete your account at any time. Server-side identifiable data is purged within 30 days of deletion.</li>
+        <li><strong>Local Control:</strong> Since chat history is stored locally, you can clear your local database directly from the app.</li>
     </ul>
 
-    <h2>4. Data Sharing and Third Parties</h2>
-    <p><strong>We do not sell your personal data.</strong> Information is only shared under the following circumstances:</p>
-    <ul>
-        <li><strong>With your consent:</strong> When you choose to share content with other users.</li>
-        <li><strong>Legal Requirements:</strong> If required to do so by law or in response to valid requests by public authorities (e.g., a court or a government agency).</li>
-        <li><strong>Service Providers:</strong> We may use third-party hosting (e.g., DigitalOcean) to maintain our infrastructure. These partners are contractually obligated to protect your data.</li>
-    </ul>
+    <h2>4. Security Standards</h2>
+    <p>We use industry-standard protocols (SSL/TLS) for data in transit. While no system is perfect, our use of E2EE ensures that the most sensitive part of your data—your conversations—remains private even in the event of a server breach.</p>
 
-    <h2>5. Security of Data</h2>
-    <p>We implement industry-standard security measures including SSL/TLS encryption for data in transit and hashing for stored passwords. However, no method of transmission over the Internet or electronic storage is 100% secure.</p>
+    <h2>5. Third-Party Policy</h2>
+    <p>We do not sell your data. We only use trusted infrastructure providers (like DigitalOcean) to host our backend services. These providers do not have access to your personal content.</p>
 
-    <h2>6. Children’s Privacy</h2>
-    <p>iReshp is not intended for use by children under the age of 13. We do not knowingly collect personally identifiable information from children under 13.</p>
-
-    <h2>7. Changes to This Policy</h2>
-    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Effective Date" at the top.</p>
-
-    <h2>8. Contact Information</h2>
-    <p>If you have questions regarding this policy or your data, please contact the iReshp team through the official support channels in the app or via our website.</p>
+    <h2>6. Contact Support</h2>
+    <p>For any privacy-related inquiries, please reach out through the official iReshp support channels or the contact section on our web portal.</p>
 
     <div class="footer">
-        &copy; 2026 iReshp. All rights reserved.
+        &copy; 2026 iReshp. Built for privacy and community.
     </div>
 </div>
 
